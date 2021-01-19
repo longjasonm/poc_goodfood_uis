@@ -40,7 +40,7 @@ export const index = {
   searchParameters: {
     analytics: true,
     clickAnalytics: true,
-    hitsPerPage: 18,
+    hitsPerPage: 16,
     // attributesToSnippet: ['description:25'],
   },
 };

@@ -35,7 +35,7 @@ export function Hit({ hit, insights, view }) {
 
           <footer>
             <span className="uni-Hit-currency">$</span>
-            <span className="uni-Hit-price">{hit.price_east.toLocaleString()}</span>
+            <span className="uni-Hit-price">{hit.price_east ? hit.price_east : hit.price_west}</span>
           </footer>
         </div>
 
