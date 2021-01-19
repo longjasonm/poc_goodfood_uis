@@ -32,16 +32,16 @@ import { Hit } from './Hit';
 export const inputContainer = '#search-button';
 export const inputContent = 'Search for products';
 export const keyboardShortcuts = ['/'];
-export const appId = 'latency';
-export const searchApiKey = '6be0576ff61c053d5f9a3225e2a90f76';
+export const appId = 'JINA8T7GLB';
+export const searchApiKey = 'cccd3ff2b3aaa504c5028daee311d2ea';
 export const hitComponent = Hit;
 export const index = {
-  indexName: 'instant_search',
+  indexName: 'poc_GoodFood',
   searchParameters: {
     analytics: true,
     clickAnalytics: true,
     hitsPerPage: 18,
-    attributesToSnippet: ['description:25'],
+    // attributesToSnippet: ['description:25'],
   },
 };
 
@@ -79,11 +79,11 @@ export const setUserToken = (setToken) => {
 export const sorts = [
   {
     label: 'Price ascending',
-    value: 'instant_search_price_asc',
+    value: 'poc_GoodFood_price_asc',
   },
   {
     label: 'Price descending',
-    value: 'instant_search_price_desc',
+    value: 'poc_GoodFood_price_desc',
   },
 ];
 
@@ -103,40 +103,38 @@ export const sorts = [
 
 export const refinements = [
   {
-    type: 'hierarchical',
-    header: 'Categories',
-    label: 'Category',
-    options: {
-      attributes: [
-        'hierarchicalCategories.lvl0',
-        'hierarchicalCategories.lvl1',
-      ],
-      limit: 6,
-      showMore: true,
-    },
-  },
-  {
     type: 'list',
-    header: 'Brands',
-    label: 'Brand',
+    header: 'Categories',
+    label: 'Categories',
     options: {
-      attribute: 'brand',
-      searchable: true,
-      showMore: true,
+      attribute: 'categories_eng',
       limit: 6,
-      showMoreLimit: 20,
-      translations: {
-        showMore: (expanded) =>
-          expanded ? '- View fewer brands' : '+ View more brands',
-      },
+      showMore: true,
+      searchable: true,
     },
   },
+  // {
+  //   type: 'list',
+  //   header: 'Brands',
+  //   label: 'Brand',
+  //   options: {
+  //     attribute: 'brand',
+  //     searchable: true,
+  //     showMore: true,
+  //     limit: 6,
+  //     showMoreLimit: 20,
+  //     translations: {
+  //       showMore: (expanded) =>
+  //         expanded ? '- View fewer brands' : '+ View more brands',
+  //     },
+  //   },
+  // },
   {
     type: 'slider',
     header: 'Price',
     label: 'Price',
     options: {
-      attribute: 'price',
+      attribute: 'price_east',
       transformValue: (value) => (
         <>
           <span className="uni-Hit-currency">$</span>
@@ -144,6 +142,15 @@ export const refinements = [
         </>
       ),
     },
+  },
+  {
+    type: 'toggle',
+    header: 'Ready to Eat?',
+    label: 'Ready to Eat?',
+    options: {
+      attribute: 'is_ready_to_eat',
+      value: true,
+    }
   },
 ];
 
@@ -163,12 +170,12 @@ export const refinements = [
 |
 */
 
-export const suggestionsIndex = {
-  indexName: 'instant_search_demo_query_suggestions',
-  searchParameters: {
-    hitsPerPage: 6,
-  },
-};
+// export const suggestionsIndex = {
+//   indexName: 'instant_search_demo_query_suggestions',
+//   searchParameters: {
+//     hitsPerPage: 6,
+//   },
+// };
 
 /*
 |-------------------------------------------------------------------------------
@@ -184,11 +191,11 @@ export const suggestionsIndex = {
 
 export const styles = {
   colors: {
-    primary: '#d02139',
+    primary: '#70cacb',
     secondary: '#21243d',
   },
   text: {
-    fontFamily: `-apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen,
+    fontFamily: `'Work Sans',-apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen,
 ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif`,
   },
   breakpoints: {

@@ -39,6 +39,14 @@ function getRefinement(refinement, config) {
       }));
     }
 
+    case 'toggle': {
+      return [{
+        category: refinementConfig.label,
+        label: refinementConfig.label,
+        value: refinementConfig.options.value,
+      }];
+    }
+
     case 'slider': {
       let label = '';
 

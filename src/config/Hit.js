@@ -13,17 +13,17 @@ export function Hit({ hit, insights, view }) {
         })
       }
     >
-      <a href={hit.url} className="uni-Hit-inner">
+      <a href={hit.url} className="uni-Hit-inner" title={hit._rankingInfo}>
         <div className="uni-Hit-image">
-          <img src={hit.image} alt={hit.name} loading="lazy" />
+          <img src={hit.image} alt={hit.name_eng} loading="lazy" title={'Categories: ' + hit.categories_eng} />
         </div>
 
         <div className="uni-Hit-Body">
           <header className="uni-Hit-header">
-            <h2 className="uni-Hit-category">{hit.categories[0]}</h2>
+            {/* <h2 className="uni-Hit-category">{hit.categories_eng[0]}</h2> */}
 
             <h1 className="uni-Hit-title">
-              <Highlight attribute="name" tagName="mark" hit={hit} />
+              <Highlight attribute="name_eng" tagName="mark" hit={hit} />
             </h1>
           </header>
 
@@ -35,7 +35,7 @@ export function Hit({ hit, insights, view }) {
 
           <footer>
             <span className="uni-Hit-currency">$</span>
-            <span className="uni-Hit-price">{hit.price.toLocaleString()}</span>
+            <span className="uni-Hit-price">{hit.price_east.toLocaleString()}</span>
           </footer>
         </div>
 

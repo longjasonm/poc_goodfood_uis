@@ -33,7 +33,7 @@ export const HeaderSearchBox = connectSearchBox(function SearchBox(props) {
   return (
     <div className="uni-SearchBox">
       <SearchBoxComponent
-        translations={{ placeholder: 'Search for a product, brand, color, …' }}
+        translations={{ placeholder: 'Search for gourmet foods, ingredients, etc.' }}
         {...props}
         onChange={(event) => {
           props.refine(event.currentTarget.value);

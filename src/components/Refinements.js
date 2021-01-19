@@ -3,6 +3,7 @@ import {
   RefinementList,
   HierarchicalMenu,
   Menu,
+  ToggleRefinement,
 } from 'react-instantsearch-dom';
 
 import { useAppContext } from '../hooks';
@@ -21,6 +22,9 @@ function RefinementWidget({ type, ...props }) {
 
     case 'slider':
       return <Slider {...props} />;
+
+    case 'toggle':
+      return <ToggleRefinement {...props} />;
 
     case 'list':
       return (
