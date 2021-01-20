@@ -40,11 +40,13 @@ function getRefinement(refinement, config) {
     }
 
     case 'toggle': {
-      return [{
-        category: refinementConfig.label,
-        label: refinementConfig.label,
-        value: refinementConfig.options.value,
-      }];
+      return [
+        {
+          category: refinementConfig.label,
+          label: refinement.label,
+          value: refinement.value,
+        }
+    ];
     }
 
     case 'slider': {
